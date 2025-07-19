@@ -1,5 +1,6 @@
-#
-# https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
+# MIT License
+# Copyright (c) 2025 PrometheanDevelopment
+# See LICENSE file: https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
 
 import random
 
