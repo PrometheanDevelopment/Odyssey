@@ -1,3 +1,6 @@
+#
+# https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
+
 import random
 
 # Player inventory (max 10 items)
