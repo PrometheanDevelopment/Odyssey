@@ -2,14 +2,18 @@
 # Copyright (c) 2025 PrometheanDevelopment
 # See LICENSE file: https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
 
+# Imports
 import random
+import os
 
-# Player inventory (max 10 items)
+# Pre-set variables
 inventory = []
 object_num = 0
-charisma = 1
 
 class debug:
+
+    def clearscreen():
+        os.system('cls')
 
     class area:
 
@@ -25,6 +29,61 @@ class debug:
             object_num = 0
             objects = [None]
             return object_num, objects
+
+class titlescreen:
+
+    def license():
+        debug.clearscreen()
+        print("MIT License                                                                   ")
+        print("                                                                              ")
+        print("Copyright (c) 2025 PrometheanDevelopment                                      ")
+        print("                                                                              ")
+        print("Permission is hereby granted, free of charge, to any person obtaining a copy  ")
+        print("of this software and associated documentation files (the 'Software'), to deal ")
+        print("in the Software without restriction, including without limitation the rights  ")
+        print("to use, copy, modify, merge, publish, distribute, sublicense, and/or sell     ")
+        print("copies of the Software, and to permit persons to whom the Software is         ")
+        print("furnished to do so, subject to the following conditions:                      ")
+        print("                                                                              ")
+        print("The above copyright notice and this permission notice shall be included in all")
+        print("copies or substantial portions of the Software.                               ")
+        print("                                                                              ")
+        print("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR    ")
+        print("IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,      ")
+        print("FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE   ")
+        print("AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER        ")
+        print("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, ")
+        print("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE ")
+        print("'SOFTWARE'.                                                                   ")
+        input("\n === PRESS ENTER TO EXIT ===")
+
+    def menu(playing):
+        while not playing:
+            debug.clearscreen()
+            print(".___  ___.  __  .__   __.  __                 __       __   _______  _______ ")
+            print("|   \/   | |  | |  \ |  | |  |               |  |     |  | |   ____||   ____|")
+            print("|  \  /  | |  | |   \|  | |  |     ______    |  |     |  | |  |__   |  |__   ")
+            print("|  |\/|  | |  | |  . `  | |  |    |______|   |  |     |  | |   __|  |   __|  ")
+            print("|  |  |  | |  | |  |\   | |  |               |  `----.|  | |  |     |  |____ ")
+            print("|__|  |__| |__| |__| \__| |__|               |_______||__| |__|     |_______|")
+            print("=============================================================================")
+            print("                                                                             ")
+            print(" 1. Play                                                                     ")
+            print(" 2. Quit                                                                     ")
+            print(" 3. License                                                                  ")
+            print("                                                                             ")
+            query = input(" Select: ")
+
+            if query == "1":
+                playing = True
+                pass
+
+            elif query == "2":
+                debug.clearscreen()
+                exit()
+
+            elif query == "3":
+                titlescreen.license()
 
 class items:
 
@@ -155,6 +214,9 @@ class character:
     class Debra:
         def __init__(self):
             self.name = "Debra (with a Q)"
+            self.speech = random.choice([
+                ""
+            ])
             self.action = random.choice([
                 "Washing rain", "Eating oxygen", "Looking for her eyes", "Drowning her fish",
                 "Walking her fridge", "Folding dishes", "Getting climbed by a tree"
@@ -181,9 +243,6 @@ class player:
                     print(f"{i + 1}: {item[0]} - {item[1]}")
                 else:
                     print(f"{i + 1}: {item[0]} - {item[1]}")
-
-                
-
 
     class speech:
 
@@ -221,22 +280,7 @@ class dev:
         while True:
             ccr = input("~ ")
 
-            # Character commands
-            if ccr == "player.stat":
-                print(f"Charisma: {charisma}")
-
-            # Speech commands
-            elif ccr == "speechtest.easy":
-                for _ in range(10):
-                    print("[Success]" if player.speech.easy(charisma) else "[Failure]")
-            elif ccr == "speechtest.medium":
-                for _ in range(10):
-                    print("[Success]" if player.speech.medium(charisma) else "[Failure]")
-            elif ccr == "speechtest.hard":
-                for _ in range(10):
-                    print("[Success]" if player.speech.hard(charisma) else "[Failure]")
-
-            elif ccr == "player.additem":
+            if ccr == "player.additem":
                 print("\n[Books]")
                 for i, item in enumerate(items.book.items):
                     print(f"{i}: {item[0]}")
@@ -280,5 +324,6 @@ class dev:
                 print("[ERROR] Unknown command.")
 
 # Run dev console
+titlescreen.menu(playing=False)
 debug.area.make(area.debras_house.characters, area.debras_house.description, area.debras_house.name)
 dev.console()
