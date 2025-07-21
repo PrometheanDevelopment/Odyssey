@@ -1,4 +1,3 @@
-
 # MIT License
 # Copyright (c) 2025 PrometheanDevelopment
 # See LICENSE file: https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
@@ -6,6 +5,7 @@
 # Imports
 import random
 import os
+import time
 
 # Pre-set variables
 inventory = []
@@ -35,8 +35,6 @@ class titlescreen:
 
     def license():
         debug.clearscreen()
-        print("MIT License                                                                   ")
-        print("                                                                              ")
         print("Copyright (c) 2025 PrometheanDevelopment                                      ")
         print("                                                                              ")
         print("Permission is hereby granted, free of charge, to any person obtaining a copy  ")
@@ -81,6 +79,7 @@ class titlescreen:
 
             elif query == "2":
                 debug.clearscreen()
+                time.sleep(1)
                 exit()
 
             elif query == "3":
@@ -109,8 +108,8 @@ class items:
             self.damage = damage
 
         items = [
-            ("Disruptor Pistol", "A futuristic blaster that fires bolts of energy", 10),
-            ("Disruptor Rifle", "A bulky futuristic rifle that fires bolts of energy.", 15),
+            ("Bonkinator 2000", "A comically large, colorful mallet that makes a loud BONK! sound on impact", 17),
+            ("Boxing glove", "Its a large, padded, red glove.", 5)
         ]
 
     class consumable:
@@ -192,37 +191,166 @@ class items:
 
 class object:
 
+    #===========#
+    # D E B R A #
+    #===========#
+
     class debra:
 
         class fridge:
-            object_name = "Ceiling fridge"
-            inspect = "Attached to the ceiling. You can't reach it."
+            object_name = "Fridge"
+            inspect = "It is attached to the ceiling. You can't reach it."
         class bed:
             object_name = "Bed"
-            inspect = "Single size bed with bright red sheets and pillow, with a white blanket."
+            inspect = "Its a single size bed with bright red sheets and pillow, with a white blanket."
         class dining:
             object_name = "Dining Area"
-            inspect = "A wooden chair with a table on either side."
+            inspect = "Its a wooden chair with a table on either side."
         class kitchen:
             object_name = "Kitchen"
-            inspect = "A completely normal, modern-style kitchen."      
+            inspect = "Its a completely normal, modern-style kitchen."      
         class window:
             object_name = "Window"
-            inspect = "A four-section, cross framed window, looking out into an endless void dotted with small lights."
+            inspect = "The four-section, cross framed window, looks out into an endless void dotted with small lights."
+
+    #===============================================#
+    # L I B R A R Y  O F  T R A N S C E N D E N C E #
+    #===============================================#
+
+    class library_of_transcendence:
+
+        class shelves:
+
+            class shelf:
+                object_name = "Shelves"
+                inspect = "The shelves strech out of sight upwards into a dark void. Looking down the aisles, you cannot see where they end."
+                def interact():
+                    interact = input("Take a book?\n 1. Yes\n 2. No\n\nSelect: ")
+                    if interact == "1":
+                        inventory.append(random.choice([items.book.items]))
+
+            class desk:
+                object_name = "Reception desk"
+                inspect = "A large, rounded reception desk stands between the entrance and the reading room. It is piled high with books."
+
+        class reading_room:
+
+            class mural:
+                object_name = "Mural"
+                inspect = "A large mural dominates the far wall from the entrance. It shows half of the mural filled with rainbows, light and angels. The other half is full of demons, darkness, and fire. The creatures are shown fighting those on the opposing side."
+
+            class table:
+                object_name = "Reading tables"
+                inspect = "Rows of tidy desks with green hooded lamps fill the centre of the room. Each can sit up to 4 people."
+
+            class booth:
+                object_name = "Reading booths"
+                inspect = "Along the edges of the room, there are reading booths; glass boxes, each with 2 green leather couches facing each other, large table between them. The boothes are seperated by dark wooden panels."
+
+    #=====================#
+    # B O I N G V I L L E #
+    #=====================#
+
+    class boingville:
+
+        class outside:
+
+            class sign:
+
+                object_name = "Welcome sign"
+                inspect = '"Welcome to Boingville! Pop. 5"'
+
+            class bouncy_castle:
+
+                object_name = "Bouncy castle"
+                inspect = "Its a bouncy castle. It is still less bouncy than the ground though."
+
+        class lettuce_house:
+
+            class antipoline:
+
+                object_name = "Antipoline"
+                inspect = "It is sticky, and stops things on it from bouncing."
+
+            class flatinator:
+
+                object_name = "Flatinator MK.2"
+                inspect = "Its a giant hydraulic press."
+
 
 class character:
 
-    class Debra:
-        def __init__(self):
-            self.name = "Debra (with a Q)"
-            self.speech = random.choice([
-                ""
-            ])
-            self.action = random.choice([
-                "Washing rain", "Eating oxygen", "Looking for her eyes", "Drowning her fish",
-                "Walking her fridge", "Folding dishes", "Getting climbed by a tree"
-            ])
+    class debra:
 
+        class Debra:
+            def __init__(self):
+                self.name = "Debra (with a Q)"
+                self.speech = random.choice([
+                    '"Hello honey!"', '(Smiles)', '""'
+                ])
+                self.action = random.choice([
+                    "She is busy washing rain", "Shes eating oxygen", "She is busy looking for her eyes", "Shes drowning her fish",
+                    "She is walking her fridge", "Shes folding dishes", "Shes getting climbed by a tree"
+                ])
+
+    class library_of_transendence:
+
+        class shelves:
+                
+            class Joan:
+
+                def __init__(self):
+                    self.name = "Joan the Librarian"
+                    self.speech = random.choice([
+                        '""'
+                    ])
+                    self.action = random.choice([
+                        "She glances up at her book and stares at you.", "She is busy writing in a large tome."
+                    ])
+
+            class Galadriel:
+
+                def __init__(self):
+                    self.name = "Galadriel (El)"
+
+                    rare_line = random.randint(1,100)
+                    if rare_line == 100:
+                        self.speech = '"Everyone’s so obsessed with light and dark. Nobody talks about the shadows. That’s where I live."'
+                    else:
+                        self.speech = random.choice([
+                            '"If you\'re here to save the world, I suggest starting by not blowing it up."', 
+                            '"You’re still standing here. Is it bravery, or the inability to take a hint?"'
+                        ])
+                    self.action = random.choice([
+                        "She is staring at the cover of a gilded book, but not openning it.", "Shes holding a fireball.",
+                        "She is glaring at a palm-leaf scroll.", "Shes brooding."
+                    ])
+
+    class boingville:
+
+        class lettuce:
+
+            def __init__(self):
+                self.name = "Lettuce the Flat"
+                self.speech = random.choice([
+                    '"Flat... Flat.. Flat..."', '"This is my Antipoline." he scuttles to the antipoline. "It’s not for sale. Or sharing. Or bouncing."',
+                    '"Stupid blouncing people and their stupid happiness..."', '"Stop bouncing."', '"Imagine not being a leafy green! Hahaha!"'
+                ])
+                self.action = random.choice([
+                    "He is muttering to himself.", "He is sitting on the antipoline, doing nothing.", "He is smoothing himself out.",
+                    "Hes writing a visa application to go to Flatsville."
+                ])
+
+        class mrbouncmans:
+
+            def __init__(self):
+                self.name = "Mr Bouncmans"
+                self.speech = random.choice([
+                    '"Bouncing is great!"', '""'
+                ])
+                self.action = random.choice([
+                    "He is bouncing"
+                ])
 
 class player:
 
@@ -264,10 +392,44 @@ class area:
 
     class debras_house:
 
-        characters = [character.Debra()]
+        characters = [character.debra.Debra()]
         objects = [object.debra.bed, object.debra.dining, object.debra.fridge, object.debra.kitchen, object.debra.window]
-        description = "A small, one roomed house."
+        description = "Its a small, one roomed house."
         name = "Debra's House"
+
+    class library_of_transcendence:
+
+        class shelves:
+        
+            characters = []
+            objects = [object.library_of_transcendence.shelves]
+            description = "It is an endless library of arcane knowledge."
+            name = "Library of Transcendence: Shelves"
+
+        class reading_room:
+
+            characters = []
+            objects = [object.library_of_transcendence.reading_room]
+            description = "It is an endless library of arcane knowledge."
+            name = "Library of Transcendence: Reading room"
+
+    class boingville:
+
+        class boingville_store:
+
+            characters = []
+            objects = []            
+            description = "Its a store that sells bouncy objects."
+            name = "KLOMP'S SPRING-THING EMPORIUM"
+
+        class outside:
+
+            characters = []
+            objects = []
+            description = "You are in a small town sitting on a plateu overlooking a desert."
+            name = "Boingville"
+
+
 
 
 
@@ -319,12 +481,12 @@ class dev:
                     print("[ERROR] Please enter valid numbers.")
 
             elif ccr == "player.inventory":
-                player.inventory.inventory()
+                player.inventory.view()
 
             else:
                 print("[ERROR] Unknown command.")
 
 # Run dev console
 titlescreen.menu(playing=False)
-debug.area.make(area.debras_house.characters, area.debras_house.description, area.debras_house.name)
+inventory.append(random.choice([items.book.items]))
 dev.console()
