@@ -74,6 +74,7 @@ class titlescreen:
             query = input(" Select: ")
 
             if query == "1":
+                debug.clearscreen()
                 playing = True
                 pass
 
@@ -94,8 +95,9 @@ class items:
             self.text = text
 
         items = [
-            ("Brave New World", "A sci-fi dystopian novel by Aldous Huxley", "\n'Not to mention the right to grow old and ugly and impotent; the right to have syphilis and cancer; the right to have too little to eat; the right to be lousy; the right to live in constant apprehension of what may happen tomorrow; the right to catch typhoid; the right to be tortured by unspeakable pains of every kind.' There was a long silence. 'I claim them all,' said the Savage at last. Mustapha Mond shrugged his shoulders. \n'You're welcome,' he said."),
-            ("The Art Of Simple Sabotage", "A book on how to sabotage and be annoying", "Section 3: Managers and Supervisors: To lower morale and production,  think of the worst boss you’ve had and act like that. Be pleasant to inefficient workers; give them undeserved promotions. Discriminate against efficient workers; complain unjustly about their work. When possible, refer all matters to committees for 'further study and consideration.' Attempt to make the committees as large and bureaucratic as possible."),
+            ("Guide to being annoying: Beginner", "A beginner guide to being annoying.", "A very simple and easy way to be annoying is to repeat someone as they are talking to you. This method is both simple, and effective, making it a prime strategy for beginners."),
+            ("Guide to being annoying: Intermediate", "An intermediate guide to being annoying.", ""),
+            ("Guide to being annoying: Expert", "An expert guide to being annoying.", "Potentially the most annoying action possible, is to interrupt someone. Do do this effectively, you will need: a safe distance of 62km, and a 1mt hydrogen bomb. Plant the bomb, move to minimum safe distance and detonate (Note: Do NOT look at the flash). This is guaranteed to interrupt your target sufficiently."),
             ("Cautionary Tales: Vol. 1", "A book containing cautionary tales.", "There was once a man who could not be harmed by reality. Punches deflected off him, rocks shattered, and bullets bounced off him. He thought he was invincible. Then he clipped through reality, into the backrooms, and died in the first 10 seconds."),
             ("Cautionary Tales: Vol. 2", "A book containing cautionary tales.", "There were once 3 evil kings, each had a prophecy. The first's said that no man could kill him. The second's; no weapon could harm him. And the third's was that no mortal hand could kill him. The first proceeded to be hacked apart by a woman, the second fell down some stairs, and the third was kicked to death by an angry mob."),
             ("Cautionary Tales: Vol. 3", "A book containing cautionary tales.", "There was once a boy named Boopy. Boopy was to ride the bus and collect some groceries, but he was too late. So he walked into a newsagent with $300 in hand, and began buying scratch tickets. The cashier told him to stop after he had spent $200, but it was already too late. Boopy had very little money left, and had to eat dirt for the next 2 weeks."),
@@ -108,86 +110,126 @@ class items:
             self.damage = damage
 
         items = [
-            ("Bonkinator 2000", "A comically large, colorful mallet that makes a loud BONK! sound on impact", 17),
-            ("Boxing glove", "Its a large, padded, red glove.", 5)
+            ("Bonkinator 2000", "Its a comically large, colorful mallet that makes a loud BONK! sound on impact", 17),
+            ("Boxing glove", "Its a large, padded, red glove.", 5),
+            ("Danger Fork", "Its a dangerous fork.", 5),
+            ("Rubber Chicken", "It's squeaky and mildly threatening.", 2),
         ]
 
     class consumable:
-        def __init__(self, name, desc, health):
-            self.name = name
-            self.desc = desc
-            self.health = health
 
-        items = [
+            class food:
 
-            #=========#
-            #  M E D  #
-            #=========#
+                def __init__(self, name, desc, health):
+                    self.name = name
+                    self.desc = desc
+                    self.health = health
+
+                debras_items = [
+                    # Debra's cooking - Superfoods for deities
+                    ("Ambrosia", "Crispy, flaky pastry sheet. Changes flavor as you eat.", 500),
+                    ("Nectar", "Looks like apple juice. Absolutely delicious.", 500),
+                ]
+
+                items = [
+
+                    #===========#
+                    #  P A S T  #
+                    #===========#
+
+                    ("WWI Ration - Bread", "A metal can containing discs of rock-solid bread.", 2),
+                    ("WWI Ration - Meat", "A metal can containing a mysterious pink-grey meat.", 2),
+                    ("WWI Ration - Soup", "A metal can containing a grey, soupy liquid.", 2),
+                    ("Dampbell's Soup - Tomato soup", "A red and white metal can containing tomato soup. Looks old.", 3),
+                    ("Dampbell's Soup - Beef stew", "A red and white metal can containing beef stew. Looks old.", 3),
+                    ("Dampbell's Soup - Vegetable soup", "A red and white metal can containing vegetable soup. Looks old.", 3),
+                    ("Tinned Ham", "A cubic metal tin containing processed ham. 60% of daily reccomended intake of sodium. Expired in 1923.", 3),
+                    ("Water Pie", "Everone's favourite great depression dessert! It looks like a sad custard tart, but it's water!", 4),
+                    ("Chipped Beef", "Thinly sliced pieces of salted, pressed beef. ", 2),
+                    ("Brown Bread", "A piece of dark, seedy bread. Smells medieval.", 2),
+                    ("Jelly-in-a-box", "Its an extrememly old, crumbling cardboard box of jelly powder.", 2),
+                    ("Stewed Prunes", "A handful of wet, mushy prunes. They are kinda-sticky and slimy. And now... Oh dear god! Your hands are kinda-sticky and slimy!", 2),
+                    ("Venus Bar", "A caramel & nougat chocolate bar. Only 3 years past it's sell-by date!", 1),
+                    ("Blood Soup", "A thin broth made from pigs blood and vegetables. THIS. IS. SPARTA!!!", 3),
+                    ("Plonkie", "A fluffy finger-cake filled with cream. 200 years old, still safe to eat.", 1),
+                    ("Mysterious Soup", "A strange, chunky soup.", (random.randint(-1, 5))),
 
 
-            # Debra's Medicine - Miracle medicine for deities
-            ("Chicken Noodle Soup", "A white mug of steaming Chicken Noodle Soup.", 1000),
+                    #===============#
+                    #  M O D E R N  # 
+                    #===============#
 
-            #===========#
-            #  F O O D  #
-            #===========#
+                    ("Thick's Chips", "Thick and solid!", 3),
+                    ("FettuccineOs", "No longer at risk of copyright issues!", 5),
+                    ("Pickle chips", "Crinkle-cut slices of deep-fried pickles. They don't know what the hell a kilometre is."),
 
-            # Debra's cooking - Superfoods for deities
-            ("Ambrosia", "Crispy, flaky pastry sheet. Changes flavor as you eat.", 500),
-            ("Nectar", "Looks like apple juice. Absolutely delicious.", 500),
+                    #===============#
+                    #  F U T U R E  #
+                    #===============#
 
-            # EazyEat CORP - Junk/Hyper-processed food
-            ("OmniChip™", "One, giant chip. 20x daily reccomended calorie intake.", 5),
-            ("Meatyblock™: Chik’n Nugget", "Hyper-proccessed cube of 'Chicken'.", 3),
-            ("Meatyblock™: Hickor’ee Ham", "Hyper-proccessed cube of 'Ham'.", 3),
-            ("Meatyblock™: Smok’d Rib", "Hyper-proccessed cube of 'Rib'. Unclear from which animal.", 3),
-            ("Cheezy Puffs™", "Alarmingly orange. Deemed a health hazard in 73 nations.", 1),
+                    # EazyEat CORP - Junk/Hyper-processed food
+                    ("OmniChip™", "One, giant chip. 20x daily reccomended calorie intake.", 5),
+                    ("Meatyblock™: Chik’n Nugget", "Hyper-proccessed cube of 'Chicken'.", 3),
+                    ("Meatyblock™: Hickor’ee Ham", "Hyper-proccessed cube of 'Ham'.", 3),
+                    ("Meatyblock™: Smok’d Rib", "Hyper-proccessed cube of 'Rib'. Unclear from which animal.", 3),
+                    ("Cheezy Puffs™", "Alarmingly orange. Deemed a health hazard in 73 nations.", 1),
 
-            # Mealpod Inc - 'Edible' food discs
-            ("BreakfastPod™: Omelette", "A flavourless dark yellow disc.", 3),
-            ("BreakfastPod™: Bacon & Eggs", "A flavorless gray disc.", 3),
-            ("BreakfastPod™: Waffle", "A flavourless beige disc.", 3),
-            ("BreakfastPod™: Jam Toast", "A flavourless red and beige disc.", 3),
-            ("SnackPod™: Chips", "A small, flavourless yellow disc.", 3),
-            ("SnackPod™: Fruit Salad", "A small, flavourless, colorful disc.", 3),
-            ("SnackPod™: Chocolate Bar", "A small, brown  disc.", 3),
-            ("SnackPod™: Crackers and cheese", "A small, flavourless beige disc.", 3),
-            ("LunchPod™: BLT Sandwich", "A flavorless white disc.", 3),
-            ("LunchPod™: Sausage Roll", "A flavourless brown disc.", 3),
-            ("LunchPod™: Hamburger", "A flavourless beige, brown, and green striped disc.", 3),
-            ("LunchPod™: Fish & Chips", "A flavourless yellow disc.", 3),
-            ("DinnerPod™: Meat Pie", "A flavourless brown disc.", 3),
-            ("DinnerPod™: Chicken & Rice", "A flavourless white disc.", 3),
-            ("DinnerPod™: Tuna Casserole", "A flavourless pale yellow disc.", 3),
-            ("DinnerPod™: Mac & Cheese", "A flavourless yellow disc.", 3),
-            ("DessertPod™: Apple Pie & Custard", "A flavourless beige disc.", 3),
-            ("DessertPod™: Banana Split", "A flavourless white, pink, and brown striped disc.", 3),
-            ("DessertPod™: Chocolate Cake", "A flavourless brown disc.", 3),
-            ("DessertPod™: Pudding", "A flavourless light yellow disc.", 3),
-            ("SpecialPod™: Birthday Cake", "A flavourless light blue disc with colorful sprinkles.", 3),
-            ("SpecialPod™: Turkey", "A flavourless beige disc.", 3),
-            ("SpecialPod™: Christmas Pudding", "A flavourless brown disc with white icing.", 3),
-            ("SpecialPod™: Easter Egg", "A flavourless brown disc.", 3),
+                    # Mealpod Inc - 'Edible' food discs
+                    ("BreakfastPod™: Omelette", "A flavourless dark yellow disc.", 3),
+                    ("BreakfastPod™: Bacon & Eggs", "A flavorless gray disc.", 3),
+                    ("BreakfastPod™: Waffle", "A flavourless beige disc.", 3),
+                    ("BreakfastPod™: Jam Toast", "A flavourless red and beige disc.", 3),
+                    ("SnackPod™: Chips", "A small, flavourless yellow disc.", 3),
+                    ("SnackPod™: Fruit Salad", "A small, flavourless, colorful disc.", 3),
+                    ("SnackPod™: Chocolate Bar", "A small, brown  disc.", 3),
+                    ("SnackPod™: Crackers and cheese", "A small, flavourless beige disc.", 3),
+                    ("LunchPod™: BLT Sandwich", "A flavorless white disc.", 3),
+                    ("LunchPod™: Sausage Roll", "A flavourless brown disc.", 3),
+                    ("LunchPod™: Hamburger", "A flavourless beige, brown, and green striped disc.", 3),
+                    ("LunchPod™: Fish & Chips", "A flavourless yellow disc.", 3),
+                    ("DinnerPod™: Meat Pie", "A flavourless brown disc.", 3),
+                    ("DinnerPod™: Chicken & Rice", "A flavourless white disc.", 3),
+                    ("DinnerPod™: Tuna Casserole", "A flavourless pale yellow disc.", 3),
+                    ("DinnerPod™: Mac & Cheese", "A flavourless yellow disc.", 3),
+                    ("DessertPod™: Apple Pie & Custard", "A flavourless beige disc.", 3),
+                    ("DessertPod™: Banana Split", "A flavourless white, pink, and brown striped disc.", 3),
+                    ("DessertPod™: Chocolate Cake", "A flavourless brown disc.", 3),
+                    ("DessertPod™: Pudding", "A flavourless light yellow disc.", 3),
+                    ("SpecialPod™: Birthday Cake", "A flavourless light blue disc with colorful sprinkles.", 3),
+                    ("SpecialPod™: Turkey", "A flavourless beige disc.", 3),
+                    ("SpecialPod™: Christmas Pudding", "A flavourless brown disc with white icing.", 3),
+                    ("SpecialPod™: Easter Egg", "A flavourless brown disc.", 3),
 
-            # Ultra-LUXE Ltd - Luxury, good food
-            ("TrueMeat™: Wagyu Beef", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
-            ("TrueMeat™: Iberico Ham", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
-            ("TrueMeat™: Ayam Cemani Chicken", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
-            ("PearlFoam Caviar™", "Spherical protein pearls with oceanic data imprints.", 2),
-            ("NeoTruffle Gelée™", "Infused with real truffle DNA. Possibly from fungus.", 3),
-            ("IvoryCrust Pizzaette™", "Crust made from albino cornmeal and 'white' tomatoes.", 7),
-            ("LuxeBar™: Ambrosia Blend", "Combines 47 extinct flavors.", 5),
-            ("LuxeBar™: Nectar Blend", "Combines 32 extinct flavors.", 5),
-            ("LuxeBar™: Deity Blend", "Combines 64 extinct flavors.", 5),
-            ("LuxeBar™: Aether Blend", "Combines 11 extinct flavors.", 5),
-            ("QuantumGrapes™", "They never taste the same twice. Literally.", 5),
-            ("StasisVintage WineShot™", "Aged in temporal suspension. A single 5ml vial.", 3),
-            ("CarbonTart™", "Pure black. Tastes like velvet and threat.", 10),
+                    # Ultra-LUXE Ltd - Luxury, good food
+                    ("TrueMeat™: Wagyu Beef", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
+                    ("TrueMeat™: Iberico Ham", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
+                    ("TrueMeat™: Ayam Cemani Chicken", "Grown in a zero-gravity nutrient vat. Massaged hourly by robotic arms.", 7),
+                    ("PearlFoam Caviar™", "Spherical protein pearls with oceanic data imprints.", 2),
+                    ("NeoTruffle Gelée™", "Infused with real truffle DNA. Possibly from fungus.", 3),
+                    ("IvoryCrust Pizzaette™", "Crust made from albino cornmeal and 'white' tomatoes.", 7),
+                    ("LuxeBar™: Ambrosia Blend", "Combines 47 extinct flavors.", 5),
+                    ("LuxeBar™: Nectar Blend", "Combines 32 extinct flavors.", 5),
+                    ("LuxeBar™: Deity Blend", "Combines 64 extinct flavors.", 5),
+                    ("LuxeBar™: Aether Blend", "Combines 11 extinct flavors.", 5),
+                    ("QuantumGrapes™", "They never taste the same twice. Literally.", 5),
+                    ("StasisVintage WineShot™", "Aged in temporal suspension. A single 5ml vial.", 3),
+                    ("CarbonTart™", "Pure black. Tastes like velvet and threats.", 10),
 
-            ("RealFruit Stripz™ (Yes, Really!)", "Allegedly 100% real fruit.", 2),
-            ("FettuccineOs", "No longer at risk of copyright issues!", 5),
+                ]
 
-        ]
+            class drink:
+
+                items = [
+                    "a"
+                ]
+
+            class medicine:
+
+                debras_items = [
+                    # Debra's Medicine - Miracle medicine for deities
+                    ("Chicken Noodle Soup", "A white mug of steaming Chicken Noodle Soup.", 1000),
+                ]
+
 
 class object:
 
@@ -213,6 +255,8 @@ class object:
             object_name = "Window"
             inspect = "The four-section, cross framed window, looks out into an endless void dotted with small lights."
 
+
+
     #===============================================#
     # L I B R A R Y  O F  T R A N S C E N D E N C E #
     #===============================================#
@@ -227,7 +271,7 @@ class object:
                 def interact():
                     interact = input("Take a book?\n 1. Yes\n 2. No\n\nSelect: ")
                     if interact == "1":
-                        inventory.append(random.choice([items.book.items]))
+                        inventory.append(random.choice(items.book.items))
 
             class desk:
                 object_name = "Reception desk"
@@ -246,6 +290,18 @@ class object:
             class booth:
                 object_name = "Reading booths"
                 inspect = "Along the edges of the room, there are reading booths; glass boxes, each with 2 green leather couches facing each other, large table between them. The boothes are seperated by dark wooden panels."
+
+            class snack_bar:
+                object_name = "Snack bar"
+                inspect = 'To the left of the entrance, there is a brass, steampunk vending machine,. It lacks a keypad or window, but has the collection and token slots. It has a warning sign taped to the front: "WARNING: Items from past may be expired. Eat at own risk."'
+                def interact():
+                    interact = input("Use machine?\n 1. Yes\n 2. No\n\nSelect: ")
+                    vending_item = None
+                    if interact == "1":
+                        vending_item = random.choice([items.food.items])
+                        
+
+
 
     #=====================#
     # B O I N G V I L L E #
@@ -305,7 +361,8 @@ class character:
                         '""'
                     ])
                     self.action = random.choice([
-                        "She glances up at her book and stares at you.", "She is busy writing in a large tome."
+                        "She glances up from her book and stares at you.", "She is busy writing in a large tome.", 
+                        "She places a finger to her lips, signalling quiet."
                     ])
 
             class Galadriel:
@@ -364,12 +421,15 @@ class player:
 
             print("[INVENTORY]")
             for i, item in enumerate(inventory):
-                if item in items.weapon.items:
+                if item in items.book.items:
+                    print(f"{i + 1}: {item[0]}")
+                elif item in items.weapon.items:
                     print(f"{i + 1}: {item[0]} - {item[1]} (Damage: {item[2]})")
-                elif item in items.consumable.items:
-                    print(f"{i + 1}: {item[0]} - {item[1]} (Heals: {item[2]})")
-                elif item in items.book.items:
-                    print(f"{i + 1}: {item[0]} - {item[1]}")
+                elif item in items.consumable.food.debras_items or items.consumable.food.items:
+                    if item[0] == "Mysterious Soup":
+                        print(f"{i + 1}: {item[0]} - {item[1]} (Heals: ???)")
+                    else:
+                        print(f"{i + 1}: {item[0]} - {item[1]} (Heals: {item[2]})")
                 else:
                     print(f"{i + 1}: {item[0]} - {item[1]}")
 
@@ -386,6 +446,9 @@ class player:
         def hard(charisma):
             chance = min(charisma * 5, 100)
             return random.randint(1, 100) <= chance
+        
+    class attack():
+        damage = random.randint(3, 12)
         
 
 class area:
@@ -422,6 +485,12 @@ class area:
             description = "Its a store that sells bouncy objects."
             name = "KLOMP'S SPRING-THING EMPORIUM"
 
+        class boingville_diner:
+
+            characters = []
+            objects = []
+            description = "Its the famous Boingville Diner!"
+
         class outside:
 
             characters = []
@@ -443,42 +512,54 @@ class dev:
         while True:
             ccr = input("~ ")
 
-            if ccr == "player.additem":
-                print("\n[Books]")
-                for i, item in enumerate(items.book.items):
-                    print(f"{i}: {item[0]}")
+            if ccr == "listitems":
+                categories = {
+                    "Book": items.book.items,
+                    "Weapon": items.weapon.items,
+                    "Consumable": (
+                        items.consumable.food.debras_items +
+                        items.consumable.food.items
+                    )
+                }
 
-                print("\n[Weapons]")
-                for i, item in enumerate(items.weapon.items):
-                    print(f"{i + 100}: {item[0]}")  # +100 offset
+                for cat, itemlist in categories.items():
+                    print(f"\n[{cat.upper()}]")
+                    for i, item in enumerate(itemlist):
+                        print(f"{i}: {item[0]}")
 
-                print("\n[Consumables]")
-                for i, item in enumerate(items.consumable.items):
-                    print(f"{i + 200}: {item[0]}")  # +200 offset
+
+            elif ccr.startswith("player.additem"):
+                parts = ccr.split()
+                if len(parts) != 3:
+                    print("[ERROR] Use: player.additem <category> <index>")
+                    return
+
+                cat_name, index = parts[1], parts[2]
+
+                categories = {
+                    "0": items.book.items,
+                    "1": items.weapon.items,
+                    "2": (
+                        items.consumable.food.items +
+                        items.consumable.food.debras_items
+                    )
+                }
+
+                if cat_name not in categories:
+                    print(f"[ERROR] Unknown category '{cat_name}'. Try: {', '.join(categories.keys())}")
+                    return
 
                 try:
-                    itemadd = int(input("Item ID to add: "))
-                    addrepeat = int(input("Amount: "))
-
-                    for _ in range(addrepeat):
-                        if len(inventory) >= 10:
-                            print("[INVENTORY FULL] Cannot add more items.")
-                            break
-
-                        if 0 <= itemadd < len(items.book.items):
-                            inventory.append(items.book.items[itemadd])
-                        elif 100 <= itemadd < 100 + len(items.weapon.items):
-                            inventory.append(items.weapon.items[itemadd - 100])
-                        elif 200 <= itemadd < 200 + len(items.consumable.items):
-                            inventory.append(items.consumable.items[itemadd - 200])
-                        else:
-                            print("[ERROR] Invalid Item ID.")
-                            break
-
-                    print(f"[OK] Inventory now has {len(inventory)} items.")
-
-                except ValueError:
-                    print("[ERROR] Please enter valid numbers.")
+                    idx = int(index)
+                    item_list = categories[cat_name]
+                    item = item_list[idx]
+                    if len(inventory) < 10:
+                        inventory.append(item)
+                        print(f"[OK] Added: {item[0]}")
+                    else:
+                        print("[ERROR] Inventory full.")
+                except (ValueError, IndexError):
+                    print("[ERROR] Invalid index.")
 
             elif ccr == "player.inventory":
                 player.inventory.view()
@@ -488,5 +569,5 @@ class dev:
 
 # Run dev console
 titlescreen.menu(playing=False)
-inventory.append(random.choice([items.book.items]))
+inventory.append(random.choice(items.book.items))
 dev.console()
