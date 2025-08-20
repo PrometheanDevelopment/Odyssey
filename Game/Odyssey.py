@@ -1,6 +1,6 @@
 # MIT License
 # Copyright (c) 2025 PrometheanDevelopment
-# See LICENSE file: https://github.com/PrometheanDevelopment/Mini-life/blob/main/LICENSE
+# See LICENSE file: https://github.com/PrometheanDevelopment/Odyssey/blob/main/LICENSE
 
 # Imports
 import random
@@ -54,36 +54,46 @@ class titlescreen:
         print("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, ")
         print("OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE ")
         print("'SOFTWARE'.                                                                   ")
-        input("\n === PRESS ENTER TO EXIT ===")
+        input("\n                      === PRESS ENTER TO EXIT ===")
 
     def menu(playing):
         while not playing:
             debug.clearscreen()
-            print(".___  ___.  __  .__   __.  __                 __       __   _______  _______ ")
-            print("|   \/   | |  | |  \ |  | |  |               |  |     |  | |   ____||   ____|")
-            print("|  \  /  | |  | |   \|  | |  |     ______    |  |     |  | |  |__   |  |__   ")
-            print("|  |\/|  | |  | |  . `  | |  |    |______|   |  |     |  | |   __|  |   __|  ")
-            print("|  |  |  | |  | |  |\   | |  |               |  `----.|  | |  |     |  |____ ")
-            print("|__|  |__| |__| |__| \__| |__|               |_______||__| |__|     |_______|")
-            print("=============================================================================")
-            print("                                                                             ")
-            print(" 1. Play                                                                     ")
-            print(" 2. Quit                                                                     ")
-            print(" 3. License                                                                  ")
-            print("                                                                             ")
+            print("    .--~~--.    ...----~~~~~~------.........------~~~~~~----...     .--~~--.    ")
+            print("   |       |   |      ___      _                               |   |       |    ")
+            print("   |       `---'     / _ \  __| |_   _ ___ ___  ___ _   _      `---'       |    ")
+            print("   |       |   |    | | | |/ _` | | | / __/ __|/ _ \ | | |     |   |       |    ")
+            print("   |       |   |    | |_| | (_| | |_| \__ \__ \  __/ |_| |     |   |       |    ")
+            print("   |       |   |     \___/ \__,_|\__, |___/___/\___|\__, |     |   |       |    ")
+            print("   |       |   |                 |___/              |___/      |   |       |    ")
+            print("   |.--~~--|   |...----~~~~~~------.........------~~~~~~----...|   |--~~--.|    ")
+            print("           '._.`                                               '._.`            ")
+            print("                    |--__                                                  .--. ")
+            print("                    |                                                 _ .-'__   ")
+            print("                    X                        -.- _ _             ,--.( (    )   ")
+            print("           |-___   / \       |-__-                `          _,-(       (       ")
+            print("           |      ~~~~~      |                              (_________(_______)_")
+            print("           X      | .:|      X                                           .      ")
+            print("--....____/ \_____| O |_____/ \_____ __ _ ___  ___ __ _ _ _____  _ _ ___ |\_ ___")
+            print("         ~~~~~   |:  . |   ~~~~~--..__   --~~~-     ~~     --   ~--    _/]_\_   ")
+            print("         |:O |__|  .O ::|__| O |       ``-..__   --~~-  ~   -~   ~~~~  '~~~~~^~~")
+            print("         |  :|  |O.  ..O|  |:  |            ```--.._   ~~     ~~-      ~~--~    ")
+            print("         |:  | .| . _   | :|  .|                    ```--..__      ~~~-     ~  ~")
+            print("         |.. | :|: |_|::|__|:. |                             ``-..__     --~~   ")
+            print("                   :::                                              ```---.___ ~")
+            print("                   .:                                                         `-")
             query = input(" Select: ")
 
-            if query == "1":
+            if query == "start":
                 debug.clearscreen()
                 playing = True
-                pass
 
-            elif query == "2":
+            elif query == "quit":
                 debug.clearscreen()
                 time.sleep(1)
                 exit()
 
-            elif query == "3":
+            elif query == "license":
                 titlescreen.license()
 
 class items:
@@ -95,12 +105,35 @@ class items:
             self.text = text
 
         items = [
-            ("Guide to being annoying: Beginner", "A beginner guide to being annoying.", "A very simple and easy way to be annoying is to repeat someone as they are talking to you. This method is both simple, and effective, making it a prime strategy for beginners."),
-            ("Guide to being annoying: Intermediate", "An intermediate guide to being annoying.", ""),
-            ("Guide to being annoying: Expert", "An expert guide to being annoying.", "Potentially the most annoying action possible, is to interrupt someone. Do do this effectively, you will need: a safe distance of 62km, and a 1mt hydrogen bomb. Plant the bomb, move to minimum safe distance and detonate (Note: Do NOT look at the flash). This is guaranteed to interrupt your target sufficiently."),
-            ("Cautionary Tales: Vol. 1", "A book containing cautionary tales.", "There was once a man who could not be harmed by reality. Punches deflected off him, rocks shattered, and bullets bounced off him. He thought he was invincible. Then he clipped through reality, into the backrooms, and died in the first 10 seconds."),
-            ("Cautionary Tales: Vol. 2", "A book containing cautionary tales.", "There were once 3 evil kings, each had a prophecy. The first's said that no man could kill him. The second's; no weapon could harm him. And the third's was that no mortal hand could kill him. The first proceeded to be hacked apart by a woman, the second fell down some stairs, and the third was kicked to death by an angry mob."),
-            ("Cautionary Tales: Vol. 3", "A book containing cautionary tales.", "There was once a boy named Boopy. Boopy was to ride the bus and collect some groceries, but he was too late. So he walked into a newsagent with $300 in hand, and began buying scratch tickets. The cashier told him to stop after he had spent $200, but it was already too late. Boopy had very little money left, and had to eat dirt for the next 2 weeks."),
+
+            # Potentially offensive jokes
+            ("Red book of jokes: Vol. 1", "A large, red book of jokes.", '"When can’t you have homemade Chinese food? Because you don’t have any pets. Just eat African food, you have plenty of neighbors!"'),
+            ("Red book of jokes: Vol. 2", "A large, red book of jokes.", '"Yes, women do make less money than men. But it’s because they tend to go for lower-paying jobs. So it goes without saying women are going to be paid less. For example, men tend to become executives or lawyers. Women tend to become female executives or female lawyers."'),
+            ("Red book of jokes: Vol. 3", "A large, red book of jokes.", '"What is the favourite sport of mexican immigrants? Cross country."'),
+            ("Red book of jokes: Vol. 4", "A large, red book of jokes.", '"What do genders and the Twin Towers have in common? There used to be two, but now people get weird when you talk about them."'),
+            ("Red book of jokes: Vol. 5", "A large, red book of jokes.", '"A Canadian, an Italian, and a Russian are looking at a painting of Adam and Eve. The Canadian starts, "See how polite and respectful they look? They must be Canadian."\n"Are you kidding?” exclaims the Italian. "They’re gorgeous. They must be Italian!" \nThe Russian finally says, \"They have nothing to wear, no house to live in, only one apple to eat, and they keep being told that they’re in heaven. They’re obviously Russian."'),
+            ("Red book of jokes: Vol. 6", "A large, red book of jokes.", '"A major recent scientific study found that monkeys actually eat more bananas than humans. I guess it’s true. It’s been a long time since I fed my monkey a dead human."'),
+
+            # Potentially legal activities
+            ("How to Smuggle a Small Nation's Economy in a Carry-On", "A travel-sized guide to fiscal irresponsibility and compact corruption.", "Step 1: Convert entire GDP into rare, untraceable assets — gemstones, NFTs, or commemorative Beanie Babies.\nStep 2: Vacuum-seal into custom compartments inside your neck pillow.\nStep 3: At airport security, appear bored and underpaid.\nStep 4: When asked what’s in the bag, say ‘emotional baggage and a mild recession.’\nBonus tip: Distract customs with a decoy suitcase full of exotic cheeses and tax forms.\nCongratulations: You are now the proud carrier of a sovereign liquidity crisis."),
+            ("How to Hide a Human-Sized Inanimate Object", "A suspiciously detailed guide to eternal hide-and-seek.", "Step 1: Do not panic.\nStep 2: Disguise the object as something people avoid on instinct — like a haunted mannequin, a cursed art piece, or a tax audit.\nStep 3: Place it in a liminal space: behind a church organ, in a locked janitor’s closet at a 24-hour bowling alley, or under the display table at an abandoned mattress store.\nRemember: the best place to hide is somewhere no sane person ever willingly returns — like the back row of a community theatre rehearsal of *Cats*."),
+            ("How to Commit Totally Imaginary, Absolutely Legal, Not-Dubious-at-All Money Laundering", "A handbook for theoretical citizens in alternate dimensions.", "First of all, you need the money to look legit - send it through a washing cycle, crumple it, stomp on it - make it look like its been in circulation. Then you need a business - something cash based - and mix in your dirty cash with the real stuff. Then, take it to a bank, send it to an offshore account, and bam! Your money is legit!"),
+
+            # Quantum shenanigans
+            ("The Observer Effect and How to Use It to Win Arguments", "A book detailing a quantum approach to always being right.", '"According to quantum physics, simply observing something changes its state. So, stare at your opponent’s logic until it collapses. Their argument becomes both valid and invalid — but you observed it first, so yours wins. Advanced technique: wear Schrödinger’s Sunglasses to double your certainty while staying cool."'),
+            ("How to Hijack the Higgs Boson", "A completely irresponsible and hypothetical guide to quantum meddling.", '"Step 1: Build a Large Hadron Collider in your backyard.\nStep 2: Lure the Higgs boson out of hiding with subatomic breadcrumbs (quarks work best).\nStep 3: Tackle it mid-field using a graviton lasso.\nStep 4: Place a sound or object into its quantum spin state.\nStep 5: Collapse the waveform. Now your object is encoded into reality.\nEnjoy your new universal constant."'),
+            
+            # Guides to being annoying
+            ("Guide to being annoying: Beginner", "A beginner guide to being annoying.", '"A very simple and easy way to be annoying is to repeat someone as they are talking to you. This method is both simple, and effective, making it a prime strategy for beginners."'),
+            ("Guide to being annoying: Intermediate", "An intermediate guide to being annoying.", '"Once you\'ve mastered basic tactics, try humming loudly during conversations, or responding to every statement with a question. Bonus points if you do both simultaneously."'),
+            ("Guide to being annoying: Expert", "An expert guide to being annoying.", '"Potentially the most annoying action possible, is to interrupt someone. Do do this effectively, you will need: a safe distance of 62km, and a 1mt hydrogen bomb. Plant the bomb, move to minimum safe distance and detonate (Note: Do NOT look at the flash). This is guaranteed to interrupt your target sufficiently."'),
+            ("Guide to being annoying: God-Tier", "A god-tier guide to being annoying.", "Transcending time and space to become an omnipresent echo in someone's thoughts is the peak of annoyance.\nTo achieve this, you must first master quantum field theory, hijack the Higgs boson, and insert your voice into the fabric of reality itself.\nEvery time they blink, breathe, or think, there you are, whispering 'What are you doing?' forever."),
+            
+            # Cautionary tales
+            ("Cautionary Tales: Vol. 1", "A book containing cautionary tales.", '"There was once a man who could not be harmed by reality. Punches deflected off him, rocks shattered, and bullets bounced off him. He thought he was invincible. Then he clipped through reality, into the backrooms, and died in the first 10 seconds."'),
+            ("Cautionary Tales: Vol. 2", "A book containing cautionary tales.", '"There were once 3 evil kings, each had a prophecy. The first\'s said that no man could kill him. The second\'s; no weapon could harm him. And the third\'s was that no mortal hand could kill him. The first proceeded to be hacked apart by a woman, the second fell down some stairs, and the third was kicked to death by an angry mob."'),
+            ("Cautionary Tales: Vol. 3", "A book containing cautionary tales.", '"There was once a boy named Boopy. Boopy was to ride the bus and collect some groceries, but he was too late. So he walked into a newsagent with $300 in hand, and began buying scratch tickets. The cashier told him to stop after he had spent $200, but it was already too late. Boopy had very little money left, and had to eat dirt for the next 2 weeks."'),
+        
         ]
 
     class weapon:
@@ -110,10 +143,13 @@ class items:
             self.damage = damage
 
         items = [
-            ("Bonkinator 2000", "Its a comically large, colorful mallet that makes a loud BONK! sound on impact", 17),
-            ("Boxing glove", "Its a large, padded, red glove.", 5),
-            ("Danger Fork", "Its a dangerous fork.", 5),
+            ("Bonkinator 2000", "Its a comically large, colorful mallet that makes a loud BONK! sound on impact", 5),
+            ("Boxing glove", "Its a large, padded, red glove.", 3),
+            ("Danger Fork", "Its a dangerous fork.", 1),
             ("Rubber Chicken", "It's squeaky and mildly threatening.", 2),
+            ("Garrotte", "A thin, sharp metal wire with 2 wooden handles.", 7),
+            ("Longsword","Just like a shortsword, only longer!", 10),
+            ("")
         ]
 
     class consumable:
@@ -137,13 +173,95 @@ class items:
                     #  P A S T  #
                     #===========#
 
-                    ("WWI Ration - Bread", "A metal can containing discs of rock-solid bread.", 2),
-                    ("WWI Ration - Meat", "A metal can containing a mysterious pink-grey meat.", 2),
-                    ("WWI Ration - Soup", "A metal can containing a grey, soupy liquid.", 2),
+                        #=============#
+                        #  R O M A N  #
+                        #=============#
+
+                        ("Panis Quadratus", "A round, scored loaf of bread carbonised in Pompeii. Crunchy. Permanently.", 2),
+                        ("Moretum", "A paste of garlic, cheese, herbs, and olive oil. Romans ate it for breakfast and to keep people far away.", 3),
+                        ("Dormouse in Honey", "A roasted dormouse stuffed with nuts, then dipped in honey. A delicacy for the rich.", 4),
+                        ("Gustum de Praecoquis", "Stewed apricots with honey and wine. Tart and sweet at once.", 3),
+                        ("Isicia Omentata", "Roman-style hamburger made with minced meat, pepper, wine, and pine nuts.", 4),
+                        ("Patina de Apua", "Fish casserole baked with eggs and herbs. Smells... assertive.", 3),
+                        ("Conditum Paradoxum", "Spiced wine sweetened with honey and flavoured with saffron. Both medicine and party fuel.", 4),
+                        ("Ova Elixa", "Hard-boiled eggs sprinkled with pepper sauce. Simple and popular.", 2),
+                        ("Garum", "Fermented fish sauce used on almost everything. The smell clears a room.", 1),
+                        ("Puls", "A humble porridge of spelt grain, water, and salt. Soldier fuel.", 2),
+                        ("Lucanian Sausage", "Spicy smoked sausage made with pork, pine nuts, and coriander.", 3),
+                        ("Melones et Caseus", "Slices of melon served with soft cheese. Surprisingly modern-tasting.", 2),
+                        ("Ostrea", "Fresh oysters eaten raw with garum. Wealth in a shell.", 3),
+                        ("Globi", "Cheese fritters fried in honey. Sticky fingers guaranteed.", 3),
+                        ("Posca", "Sour wine vinegar diluted with water. Legionary Gatorade.", 1),
+                        ("Boiled Cabbage", "Served with vinegar and oil. Cato swore it cured everything.", 1),
+
+                        #===================#
+                        #  M E D I E V A L  #
+                        #===================#
+
+                        ("Pottage", "A thick stew of barley, beans, onions, and whatever fell in the pot that day.", 3),
+                        ("Hardtack", "A rock-hard biscuit that can break both hunger and teeth.", 2),
+                        ("Honeyed Mead", "Sweet fermented drink made from honey. Might be stronger than it tastes.", 4),
+                        ("Salted Cod", "Preserved fish, chewy enough to be used as a weapon.", 3),
+                        ("Hog Roast", "A spit-roasted pig with crispy skin and smoky flavour.", 6),
+                        ("Turnip Stew", "Thin broth with chunks of turnip. Surprisingly filling.", 3),
+                        ("Manchet Bread", "Fine white bread reserved for nobility. Soft, fluffy, and smug.", 4),
+                        ("Ale-soaked Bread", "Bread dunked in ale for easy chewing. Both food and drink in one!", 3),
+                        ("Boar Pie", "Pastry crust stuffed with boar meat, herbs, and questionable hygiene.", 5),
+                        ("Apple Tarts", "Small pastries filled with sweet stewed apples. A rare treat.", 2),
+                        ("Pickled Cabbage", "Fermented cabbage with a pungent smell and stronger taste.", 2),
+                        ("Lamprey in Jelly", "A wriggly eel-like fish suspended in gelatin. Nobles swore by it.", 4),
+                        ("Blood Pudding", "A dense sausage made with animal blood, oats, and spices.", 3),
+                        ("Cheese Wheel", "A hefty wheel of hard cheese. Can be eaten or rolled downhill at enemies.", 4),
+                        ("Spiced Wine", "Warm red wine with cinnamon and cloves. Heals the body and the mood.", 4),
+
+                        ("Stale Rye Bread", "Dense, dry bread made from rye flour. Will get caught in your throat.", 1),
+                        ("Thin Onion Broth", "Hot water with the ghost of an onion waved over it.", 1),
+                        ("Boiled Turnip", "A single turnip, boiled into submission.", 1),
+                        ("Cabbage Gruel", "A watery sludge of cabbage and oats. Technically edible.", 1),
+                        ("Oatcakes", "Flat, chewy oat discs baked on a stone. Doubles as a frisbee.", 1),
+                        ("Root Mash", "Turnips, parsnips, and whatever else was dug up today. Mashed into mush.", 1),
+                        ("Salted Herring", "Strong-smelling fish preserved in salt. Best eaten fast.", 2),
+                        ("Acorn Bread", "Made from acorn flour. Slightly bitter. Slightly poisonous.", 1),
+                        ("Foraged Greens", "Random weeds and leaves boiled until soft. Might be nettles.", 1),
+                        ("Oaten Gruel", "A gloopy mixture of oats and water. Grey in colour and in spirit.", 1),
+                        ("Boiled Beetroot", "Soft, earthy beets that stain everything they touch.", 1),
+                        ("Boiled Barley", "Chewy barley boiled in water until vaguely edible.", 1),
+
+                        #=========#
+                        #  W W 1  #
+                        #=========#
+
+                        # WW1 Rations
+                        ("WW1 Ration - Bread", "A metal can containing discs of rock-solid bread.", 2),
+                        ("WW1 Ration - Meat", "A metal can containing a mysterious pink-grey meat.", 2),
+                        ("WW1 Ration - Soup", "A metal can containing a grey, soupy liquid.", 2),
+
+                        #===================#
+                        #  C O L D   W A R  #
+                        #===================#
+                        ("Atomic Loaf", "Brightly packaged white bread fortified with 12 vitamins, 8 minerals, and one Cold War secret.", 3),
+                        ("TV Dinner: Salisbury Steak", "A frozen compartment tray of steak, mashed potatoes, and peas. Best enjoyed in front of a boxy TV.", 4),
+                        ("TV Dinner: Turkey & Gravy", "A frozen feast in aluminium. Tastes like Sunday lunch and mild regret.", 4),
+                        ("Sham", "A cubic metal tin containing processed ham. 60% of daily reccomended intake of sodium.", 3),
+                        ("Sham™ Fritters", "Slices of Sham coated in batter and deep-fried. The taste of postwar prosperity.", 3),
+                        ("Tang™ Drink Mix", "Artificial orange drink mix. The future of space travel… in your cup.", 2),
+                        ("Jell-O™ Salad", "Gelatin dessert with suspended fruit, marshmallows, and mystery.", 2),
+                        ("Canned Pineapple Rings", "Golden rings of sweetness in syrup. Tropical luxury in a can.", 2),
+                        ("Canned Peas", "Small, green, and soft enough to dent with a spoon.", 1),
+                        ("Kraft Macaroni & Cheese", "Bright orange pasta in a box. Ready in minutes. Cheese optional.", 3),
+                        ("Vienna Sausages", "Tiny pale sausages in brine. Slide right out of the can.", 2),
+                        ("Milkshake Mix", "Powdered milk, sugar, and flavour. Just add milk and shake until bored.", 2),
+                        ("Hot Dog Casserole", "Hot dogs baked with beans and tinned tomato soup. A family favourite.", 3),
+                        ("Canned Chicken à la King", "Creamy chicken, peppers, and mushrooms in a tin. Luxury for the masses.", 3),
+                        ("Root Beer Float", "Soda and vanilla ice cream. The drink you can chew.", 2),
+                        ("Canned Brown Bread", "Sweet molasses bread steamed and sealed in a tin. Slice carefully.", 2),
+                        ("Potted Meat", "Ground, cooked meat in a spreadable paste. Both lunch and survival ration.", 2),
+
+                    # Dampbell's Soup - Canned soups
                     ("Dampbell's Soup - Tomato soup", "A red and white metal can containing tomato soup. Looks old.", 3),
                     ("Dampbell's Soup - Beef stew", "A red and white metal can containing beef stew. Looks old.", 3),
                     ("Dampbell's Soup - Vegetable soup", "A red and white metal can containing vegetable soup. Looks old.", 3),
-                    ("Tinned Ham", "A cubic metal tin containing processed ham. 60% of daily reccomended intake of sodium. Expired in 1923.", 3),
+
                     ("Water Pie", "Everone's favourite great depression dessert! It looks like a sad custard tart, but it's water!", 4),
                     ("Chipped Beef", "Thinly sliced pieces of salted, pressed beef. ", 2),
                     ("Brown Bread", "A piece of dark, seedy bread. Smells medieval.", 2),
@@ -151,9 +269,8 @@ class items:
                     ("Stewed Prunes", "A handful of wet, mushy prunes. They are kinda-sticky and slimy. And now... Oh dear god! Your hands are kinda-sticky and slimy!", 2),
                     ("Venus Bar", "A caramel & nougat chocolate bar. Only 3 years past it's sell-by date!", 1),
                     ("Blood Soup", "A thin broth made from pigs blood and vegetables. THIS. IS. SPARTA!!!", 3),
-                    ("Plonkie", "A fluffy finger-cake filled with cream. 200 years old, still safe to eat.", 1),
-                    ("Mysterious Soup", "A strange, chunky soup.", (random.randint(-1, 5))),
-
+                    ("Crinklie", "A fluffy finger-cake filled with cream. 200 years old, still safe to eat.", 1),
+                    ("Mysterious Soup", "A mysterious, chunky soup.", (random.randint(-1, 5))),
 
                     #===============#
                     #  M O D E R N  # 
@@ -161,8 +278,36 @@ class items:
 
                     ("Thick's Chips", "Thick and solid!", 3),
                     ("FettuccineOs", "No longer at risk of copyright issues!", 5),
-                    ("Pickle chips", "Crinkle-cut slices of deep-fried pickles. They don't know what the hell a kilometre is."),
+                    ("Pickle Chips", "Crinkle-cut slices of deep-fried pickles. They don't know what the hell a kilometre is.", 3),
+                    ("Glazed-Donut Cheeseburger", '"WARINING: 6500 Calories per serving."', 10),
+                    ("Diet Brownie", "Gluten-Free, Sugar-Free, Nutrient-Free, Taste-Free. It exists. That's all.", 1),
+                    ("Ghost Pepper Chips", "So hot they legally count as a poison in 2 states.", 3),
+                    ("Craft Cola", "Locally brewed by a guy with a beard. Tastes like dirt and nostalgia.", 2),
+                    ("Microwave Sushi", "Technically edible. Technically fish. Technically not legal in Japan.", 2),
 
+                    # McRonalds - Fast-food chain
+                    ("McRonald’s™ MegaStack™", "Six beef patties, twelve sauces, one bun. Requires two hands and three regrets.", 8),
+                    ("McRonald’s™ Cheeseburger", "Bun, patty, sauce, cheese, pickle, bun. Simplicity at it's finest.", 3),
+                    ("McRonald’s™ Quarter Kilo™", "2 patties, some sad lettuce, cheese and special sauce. Addictively delicious.", 4),
+                    ("McRonald’s™ Icecream", "A miracle! The icecream machine was working!", 2),
+                    ("McRonald’s™ Nuggets", "10 chicken nuggets, in 4 different shapes. Comes with sweet'n'sour sauce.", 3),
+                    ("McRonald’s™ Fire Nuggets", "So spicy they must be McIllegal™ in three time zones.", 2),
+                    ("McRonald’s™ Fries", "Fun Fact: Most fast-food chains use fries rather than thicker chips, because fries are faster to cook.", 1),
+                    ("McRonald’s™ McSalad™", "Limp lettuce, a single tomato slice, and invisible dressing. For the illusion of health.", 1),
+                    ("McRonald’s™ McSoup™", "A cup of salty beige liquid. Possibly rehydrated fryer grease.", 2),
+                    ("McRonald’s™ McSunrise™", "Egg, bacon, and syrup between two waffles.", 5),
+                    ("McRonald’s™ Banana Blizzard™", "Vanilla soft serve with banana sauce. Absolutely GOATed.", 1),
+                    ("McRonald’s™ Chocolate Blizzard™", "Chocolate soft serve with a flake and choc-fudge.", 1),
+                    ("McRonald’s™ Strawberry Blizzard™", "Vanilla soft serve with strawberry sauce.", 1),
+
+                    # Burger Soverign - Fast-food chain
+                    ("Burger Sovereign™ CrownBurger", "Two patties, one crown-shaped bun, endless hubris.", 5),
+                    ("Burger Sovereign™ Fries Royale", "Curly fries dipped in faux-truffle aioli. For peasants who pretend to be kings.", 4),
+                    ("Burger Sovereign™ Jester Meal", "Comes with a small Fries Royale, JesterBurger, Jester Jelly, and toy!", 2),
+                    ("Burger Sovereign™ Knight's Icecream", "A hilt-shaped cane with a blade-shaped tower of soft serve.", 2),
+                    ("Burger Sovereign™ Royal Nuggets", "10 nuggets marinated in truffle oil, double fried, and dipped in faux-truffle aioli.", 5),
+                    ("Burger Sovereign™ CrownBurger", "Two patties, one crown-shaped bun, endless hubris.", 5),
+                    
                     #===============#
                     #  F U T U R E  #
                     #===============#
@@ -213,14 +358,7 @@ class items:
                     ("LuxeBar™: Aether Blend", "Combines 11 extinct flavors.", 5),
                     ("QuantumGrapes™", "They never taste the same twice. Literally.", 5),
                     ("StasisVintage WineShot™", "Aged in temporal suspension. A single 5ml vial.", 3),
-                    ("CarbonTart™", "Pure black. Tastes like velvet and threats.", 10),
 
-                ]
-
-            class drink:
-
-                items = [
-                    "a"
                 ]
 
             class medicine:
@@ -261,78 +399,74 @@ class object:
     # L I B R A R Y  O F  T R A N S C E N D E N C E #
     #===============================================#
 
-    class library_of_transcendence:
+    class arcane_university:
+       
+       class alchemy_labs:
+           
+           class periodic_table:
+               visual = True
+               object_name = "Periodic Table of Elements"
+               inspect = f"{debug.clearscreen()}" \
+                         " __________________________________________________________________________ \n" \
+                         "|  H                                                                   He  |\n" \
+                         "|                                                                          |\n" \
+                         "|  Li  Be                                          B   C   N   O   F   Ne  |\n" \
+                         "|                                                                          |\n" \
+                         "|  Na  Mg                                          Al  Si  P   S   Cl  Ar  |\n" \
+                         "|                                                                          |\n" \
+                         "|  K   Ca  Sc  Ti  V   Cr  Mn  Fe  Co  Ni  Cu  Zn  Ga  Ge  As  Se  Br  Kr  |\n" \
+                         "|                                                                          |\n" \
+                         "|  Rb  Sr  Y   Zr  Nb  Mo  Tc  Ru  Rh  Pd  Ag  Cd  In  Sn  Sb  Te  I   Xe  |\n" \
+                         "|                                                                          |\n" \
+                         "|  Cs  Ba  *   Hf  Ta  W   Re  Os  Ir  Pt  Au  Hg  Tl  Pb  Bi  Po  At  Rn  |\n" \
+                         "|                                                                          |\n" \
+                         "|  Fr  Ra  **  Rf  Db  Sg  Bh  Hs  Mt  Ds  Rg  Cn  Nh  Fl  Mc  Lv  Ts  Og  |\n" \
+                         "|__________________________________________________________________________|\n" \
+                         "|                                                                          |\n" \
+                         "| Lantanoidi*   La  Ce  Pr  Nd  Pm  Sm  Eu  Gd  Tb  Dy  Ho  Er  Tm  Yb  Lu |\n" \
+                         "|                                                                          |\n" \
+                         "|  Aktinoidi**  Ac  Th  Pa  U   Np  Pu  Am  Cm  Bk  Cf  Es  Fm  Md  No  Lr |\n" \
+                         "|__________________________________________________________________________|\n" \
 
-        class shelves:
+       class library_of_transcendence:
 
-            class shelf:
-                object_name = "Shelves"
-                inspect = "The shelves strech out of sight upwards into a dark void. Looking down the aisles, you cannot see where they end."
-                def interact():
-                    interact = input("Take a book?\n 1. Yes\n 2. No\n\nSelect: ")
-                    if interact == "1":
-                        inventory.append(random.choice(items.book.items))
+           class shelves:
 
-            class desk:
-                object_name = "Reception desk"
-                inspect = "A large, rounded reception desk stands between the entrance and the reading room. It is piled high with books."
+               class shelf:
+                   object_name = "Shelves"
+                   inspect = "The shelves strech out of sight upwards into a dark void. Looking down the aisles, you cannot see where they end."
+                   def interact():
+                       interact = input("Take a book?\n 1. Yes\n 2. No\n\nSelect: ")
+                       if interact == "1":
+                           inventory.append(random.choice(items.book.items))
 
-        class reading_room:
+               class desk:
+                   object_name = "Reception desk"
+                   inspect = "A large, rounded reception desk stands between the entrance and the reading room. It is piled high with books."
 
-            class mural:
-                object_name = "Mural"
-                inspect = "A large mural dominates the far wall from the entrance. It shows half of the mural filled with rainbows, light and angels. The other half is full of demons, darkness, and fire. The creatures are shown fighting those on the opposing side."
+           class reading_room:
 
-            class table:
-                object_name = "Reading tables"
-                inspect = "Rows of tidy desks with green hooded lamps fill the centre of the room. Each can sit up to 4 people."
+               class mural:
+                   object_name = "Mural"
+                   inspect = "A large mural dominates the far wall from the entrance. It shows half of the mural filled with rainbows, light and angels. The other half is full of demons, darkness, and fire. The creatures are shown fighting those on the opposing side."
 
-            class booth:
-                object_name = "Reading booths"
-                inspect = "Along the edges of the room, there are reading booths; glass boxes, each with 2 green leather couches facing each other, large table between them. The boothes are seperated by dark wooden panels."
+               class table:
+                   object_name = "Reading tables"
+                   inspect = "Rows of tidy desks with green hooded lamps fill the centre of the room. Each can sit up to 4 people."
 
-            class snack_bar:
-                object_name = "Snack bar"
-                inspect = 'To the left of the entrance, there is a brass, steampunk vending machine,. It lacks a keypad or window, but has the collection and token slots. It has a warning sign taped to the front: "WARNING: Items from past may be expired. Eat at own risk."'
-                def interact():
-                    interact = input("Use machine?\n 1. Yes\n 2. No\n\nSelect: ")
-                    vending_item = None
-                    if interact == "1":
-                        vending_item = random.choice([items.food.items])
-                        
+               class booth:
+                   object_name = "Reading booths"
+                   inspect = "Along the edges of the room, there are reading booths; glass boxes, each with 2 green leather couches facing each other, large table between them. The boothes are seperated by dark wooden panels."
 
-
-
-    #=====================#
-    # B O I N G V I L L E #
-    #=====================#
-
-    class boingville:
-
-        class outside:
-
-            class sign:
-
-                object_name = "Welcome sign"
-                inspect = '"Welcome to Boingville! Pop. 5"'
-
-            class bouncy_castle:
-
-                object_name = "Bouncy castle"
-                inspect = "Its a bouncy castle. It is still less bouncy than the ground though."
-
-        class lettuce_house:
-
-            class antipoline:
-
-                object_name = "Antipoline"
-                inspect = "It is sticky, and stops things on it from bouncing."
-
-            class flatinator:
-
-                object_name = "Flatinator MK.2"
-                inspect = "Its a giant hydraulic press."
-
+               class snack_bar:
+                   object_name = "Snack bar"
+                   inspect = 'To the left of the entrance, there is a brass, steampunk vending machine,. It lacks a keypad or window, but has the collection and token slots. It has a warning sign taped to the front: "WARNING: Items from past may be expired. Eat at own risk."'
+                   def interact():
+                       interact = input("Use machine?\n 1. Yes\n 2. No\n\nSelect: ")
+                       vending_item = None
+                       if interact == "1":
+                           vending_item = random.choice([items.consumable.food.items])
+                           inventory.append(vending_item)
 
 class character:
 
@@ -356,23 +490,29 @@ class character:
             class Joan:
 
                 def __init__(self):
-                    self.name = "Joan the Librarian"
-                    self.speech = random.choice([
-                        '""'
-                    ])
+                    self.name = "Joan the Librarian"                      
                     self.action = random.choice([
                         "She glances up from her book and stares at you.", "She is busy writing in a large tome.", 
                         "She places a finger to her lips, signalling quiet."
                     ])
 
+                def speech(self):
+                    print(random.choice[
+                        "Yes?", "How can I help you?", "Good day.", "Go ahead, please.", "Greetings to you."
+                    ])
+                    ("1. Rumors")
+                    ("2. Return a book")
+                    ("3. ")
+                    input("Ask: ")
+
             class Galadriel:
 
                 def __init__(self):
-                    self.name = "Galadriel (El)"
+                    self.name = "Galadriel"
 
                     rare_line = random.randint(1,100)
                     if rare_line == 100:
-                        self.speech = '"Everyone’s so obsessed with light and dark. Nobody talks about the shadows. That’s where I live."'
+                        self.speech = '"Get away, "'
                     else:
                         self.speech = random.choice([
                             '"If you\'re here to save the world, I suggest starting by not blowing it up."', 
@@ -382,32 +522,6 @@ class character:
                         "She is staring at the cover of a gilded book, but not openning it.", "Shes holding a fireball.",
                         "She is glaring at a palm-leaf scroll.", "Shes brooding."
                     ])
-
-    class boingville:
-
-        class lettuce:
-
-            def __init__(self):
-                self.name = "Lettuce the Flat"
-                self.speech = random.choice([
-                    '"Flat... Flat.. Flat..."', '"This is my Antipoline." he scuttles to the antipoline. "It’s not for sale. Or sharing. Or bouncing."',
-                    '"Stupid blouncing people and their stupid happiness..."', '"Stop bouncing."', '"Imagine not being a leafy green! Hahaha!"'
-                ])
-                self.action = random.choice([
-                    "He is muttering to himself.", "He is sitting on the antipoline, doing nothing.", "He is smoothing himself out.",
-                    "Hes writing a visa application to go to Flatsville."
-                ])
-
-        class mrbouncmans:
-
-            def __init__(self):
-                self.name = "Mr Bouncmans"
-                self.speech = random.choice([
-                    '"Bouncing is great!"', '""'
-                ])
-                self.action = random.choice([
-                    "He is bouncing"
-                ])
 
 class player:
 
@@ -424,14 +538,37 @@ class player:
                 if item in items.book.items:
                     print(f"{i + 1}: {item[0]}")
                 elif item in items.weapon.items:
-                    print(f"{i + 1}: {item[0]} - {item[1]} (Damage: {item[2]})")
+                    print(f"{i + 1}: {item[0]} - (Damage: {item[2]})")
                 elif item in items.consumable.food.debras_items or items.consumable.food.items:
                     if item[0] == "Mysterious Soup":
-                        print(f"{i + 1}: {item[0]} - {item[1]} (Heals: ???)")
+                        print(f"{i + 1}: {item[0]} - (Heals: ???)")
                     else:
-                        print(f"{i + 1}: {item[0]} - {item[1]} (Heals: {item[2]})")
+                        print(f"{i + 1}: {item[0]} - (Heals: {item[2]})")
                 else:
-                    print(f"{i + 1}: {item[0]} - {item[1]}")
+                    print(f"{i + 1}: {item[0]}")
+
+        def items():
+            query = input("\nSelect: ")
+
+            if query == "help":
+                debug.clearscreen()
+                print("COMMANDS:")
+                print(" - help: displays commands")
+                print(" - equip: equips a selected item (equip [item number])")
+                print(" - inspect: gives description of a selected item ('inspect, (next line [item number])')")
+                input("\n                      === PRESS ENTER TO EXIT ===")
+                player.inventory.view()
+
+            elif query == "equip":
+                pass
+
+            elif query == "inspect":
+                query = int(input("\nSelect: "))
+                for i, item in enumerate(inventory):
+                    if query == i:
+                        debug.clearscreen()
+                        print(f"{item[0]}:")
+                        print(f"\n{item[1]}")
 
     class speech:
 
@@ -447,9 +584,8 @@ class player:
             chance = min(charisma * 5, 100)
             return random.randint(1, 100) <= chance
         
-    class attack():
-        damage = random.randint(3, 12)
-        
+    #class attack():
+        #damage = random.choice(0, player.inventory.equipped_weapon[3] * (random.randint(0.5, 1.5)))
 
 class area:
 
@@ -465,42 +601,16 @@ class area:
         class shelves:
         
             characters = []
-            objects = [object.library_of_transcendence.shelves]
+            objects = [object.arcane_university.library_of_transcendence.shelves]
             description = "It is an endless library of arcane knowledge."
             name = "Library of Transcendence: Shelves"
 
         class reading_room:
 
             characters = []
-            objects = [object.library_of_transcendence.reading_room]
+            objects = [object.arcane_university.library_of_transcendence.reading_room]
             description = "It is an endless library of arcane knowledge."
             name = "Library of Transcendence: Reading room"
-
-    class boingville:
-
-        class boingville_store:
-
-            characters = []
-            objects = []            
-            description = "Its a store that sells bouncy objects."
-            name = "KLOMP'S SPRING-THING EMPORIUM"
-
-        class boingville_diner:
-
-            characters = []
-            objects = []
-            description = "Its the famous Boingville Diner!"
-
-        class outside:
-
-            characters = []
-            objects = []
-            description = "You are in a small town sitting on a plateu overlooking a desert."
-            name = "Boingville"
-
-
-
-
 
 #=========#
 #  D E V  #
@@ -569,5 +679,5 @@ class dev:
 
 # Run dev console
 titlescreen.menu(playing=False)
-inventory.append(random.choice(items.book.items))
+print(object.arcane_university.alchemy_labs.periodic_table.inspect)
 dev.console()
