@@ -1,3 +1,4 @@
+
 # MIT License
 # Copyright (c) 2025 PrometheanDevelopment
 # See LICENSE file: https://github.com/PrometheanDevelopment/Odyssey/blob/main/LICENSE
@@ -196,118 +197,6 @@ class titlescreen:
             elif query == "license":
                 titlescreen.license()
 
-class player:
-
-    class inventory:
-
-        @staticmethod
-        def view():
-            if not inventory:
-                print("[EMPTY] Inventory is empty.")
-                return
-
-            print("[INVENTORY]")
-            for i, item in enumerate(inventory):
-                if item in items.book.items:
-                    print(f"{i + 1}: {item[0]}")
-                elif item in items.weapon.items:
-                    print(f"{i + 1}: {item[0]} - (Damage: {item[2]})")
-                elif item in items.consumable.food.debras_items or items.consumable.food.items:
-                    if item[0] == "Mysterious Soup":
-                        print(f"{i + 1}: {item[0]} - (Heals: ???)")
-                    else:
-                        print(f"{i + 1}: {item[0]} - (Heals: {item[2]})")
-                else:
-                    print(f"{i + 1}: {item[0]}")
-
-        def items():
-            query = input("\nSelect: ")
-
-            if query == "help":
-                debug.clearscreen()
-                print("COMMANDS:")
-                print(" - help: displays commands")
-                print(" - equip: equips a selected item (equip [item number])")
-                print(" - inspect: gives description of a selected item ('inspect, (next line [item number])')")
-                input("\n                      === PRESS ENTER TO EXIT ===")
-                player.inventory.view()
-
-            elif query == "equip":
-                pass
-
-            elif query == "inspect":
-                query = int(input("\nSelect: "))
-                for i, item in enumerate(inventory):
-                    if query == i:
-                        debug.clearscreen()
-                        print(f"{item[0]}:")
-                        print(f"\n{item[1]}")
-
-#=========#
-#  D E V  #
-#=========#
-
-class dev:
-
-    def console():
-        while True:
-            ccr = input("~ ")
-
-            if ccr == "listitems":
-                categories = {
-                    "Book": items.book.items,
-                    "Weapon": items.weapon.items,
-                    "Consumable": (
-                        items.consumable.food.debras_items +
-                        items.consumable.food.items
-                    )
-                }
-
-                for cat, itemlist in categories.items():
-                    print(f"\n[{cat.upper()}]")
-                    for i, item in enumerate(itemlist):
-                        print(f"{i}: {item[0]}")
-
-
-            elif ccr.startswith("player.additem"):
-                parts = ccr.split()
-                if len(parts) != 3:
-                    print("[ERROR] Use: player.additem <category> <index>")
-                    return
-
-                cat_name, index = parts[1], parts[2]
-
-                categories = {
-                    "0": items.book.items,
-                    "1": items.weapon.items,
-                    "2": (
-                        items.consumable.food.items +
-                        items.consumable.food.debras_items
-                    )
-                }
-
-                if cat_name not in categories:
-                    print(f"[ERROR] Unknown category '{cat_name}'. Try: {', '.join(categories.keys())}")
-                    return
-
-                try:
-                    idx = int(index)
-                    item_list = categories[cat_name]
-                    item = item_list[idx]
-                    if len(inventory) < 10:
-                        inventory.append(item)
-                        print(f"[OK] Added: {item[0]}")
-                    else:
-                        print("[ERROR] Inventory full.")
-                except (ValueError, IndexError):
-                    print("[ERROR] Invalid index.")
-
-            elif ccr == "player.inventory":
-                player.inventory.view()
-
-            else:
-                print("[ERROR] Unknown command.")
-
 # Run dev console
 
 # Ensure debug.clearscreen uses GUI clear function explicitly (in case os.system wrapper missed something)
@@ -328,7 +217,7 @@ except SystemExit:
 # Launch dev console (this will block running under the GUI but uses gui_input so it's fine)
 try:
     print("Running Successfully")
-    dev.console()
+
 except SystemExit:
     try:
         root.destroy()
